@@ -5,7 +5,8 @@ apt-get install -yqq \
 supervisor \
 nginx \
 gunicorn \
-django \
+python-django \
+python-django-filter \
 python-openpyxl \
 sqlite3 \
 ca-certificates
