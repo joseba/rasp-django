@@ -12,7 +12,8 @@ ca-certificates
 RUN pip install supervisor \
 gunicorn \
 django \
-openpyxl
+openpyxl \
+pytz
 
 # setup all the config files
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
