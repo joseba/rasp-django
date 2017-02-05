@@ -2,9 +2,9 @@ FROM joseba/rasp-base
 
 RUN apt-get update && \
 apt-get install -yqq \
-nginx \
 python-pip \
-
+python-wheel \
+nginx \
 sqlite3 \
 ca-certificates
 
@@ -12,8 +12,7 @@ RUN groupadd django && \
 useradd -g django -s /sbin/nologin -m django
 
 # install python packages
-RUN pip install --upgrade setuptools \
-supervisor \
+RUN pip install supervisor \
 gunicorn \
 django \
 openpyxl
