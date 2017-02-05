@@ -2,17 +2,21 @@ FROM joseba/rasp-base
 
 RUN apt-get update && \
 apt-get install -yqq \
-supervisor \
 nginx \
-gunicorn \
-python-django \
-python-django-filter \
-python-openpyxl \
+python-pip \
+
 sqlite3 \
 ca-certificates
 
 RUN groupadd django && \
 useradd -g django -s /sbin/nologin -m django
+
+# install python packages
+RUN pip install --upgrade setuptools \
+supervisor \
+gunicorn \
+django \
+openpyxl
 
 # setup all the config files
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
