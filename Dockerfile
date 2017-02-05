@@ -8,9 +8,6 @@ nginx \
 sqlite3 \
 ca-certificates
 
-RUN groupadd django && \
-useradd -g django -s /sbin/nologin -m django
-
 # install python packages
 RUN pip install supervisor \
 gunicorn \
